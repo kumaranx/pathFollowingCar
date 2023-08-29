@@ -16,10 +16,14 @@ def getLaneCurve(img):
     imgWarpResized = cv.resize(imgWarp, (480, 240))
     imgWarpPoints = utils.drawPoints(imgCopy, points)
 
+    ## Step 3 - Histogram
+    basePoint, imgHist = utils.getHistogram(imgWarpResized, display=True)
+
     cv.imshow("Thresh image", imgThresh)
     cv.imshow("Warp image", imgWarp)
     cv.imshow("Warp Resized image", imgWarpResized)
     cv.imshow("Warp Points image", imgWarpPoints)
+    cv.imshow("Histogram image", imgHist)
 
     return None
 
